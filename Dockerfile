@@ -15,7 +15,9 @@ ENV REFERSHED_AT 2015-07-13
 RUN apt-get update
 RUN apt-get install -y openssh-server && rm -rf /var/lib/apt/lists/* && mkdir /var/run/sshd 
 
-ENTRYPOINT ["/usr/sbin/sshd", "-D"]
+add run.sh /run.sh
+run chmod +x /run.sh
+cmd ["/run.sh"]
 
 EXPOSE 22
 
