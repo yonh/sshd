@@ -13,7 +13,7 @@ MAINTAINER yonh "azssjli@163.com"
 ENV REFERSHED_AT 2015-07-13
 
 RUN apt-get update
-RUN apt-get install -y openssh-server && rm -rf /var/lib/apt/lists/*
+RUN apt-get install -y openssh-server && rm -rf /var/lib/apt/lists/* && mkdir /var/run/sshd 
 
 ENTRYPOINT ["/usr/sbin/sshd", "-D"]
 
